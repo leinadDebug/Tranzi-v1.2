@@ -98,19 +98,19 @@ Sidebar heading:  20px 'Inter', sans-serif
 	--font-heading: 'Inter', sans-serif;
 	--fontawesome: "Font Awesome 5 Pro";
 	--black: #000000;
-	--dark: #0a4251;
-	--dark-secondary: #0E313A;
-	--white: #ffffff;
-	--white-secondary: #bed6dc;
-	--white-secondary: #d8e3f0;
-	--color-primary: #2d7aef;
-	--color-secondary: #FF7D44;
-	--color-heading: #0E313A;
-	--color-paragraph: #666666;
+	--dark: #0C2D4A;
+	--dark-secondary: #14213D;
+	--white: #FFFFFF;
+	--white-secondary: #E6F0FF;
+	--white-secondary: #D9E7FF;
+	--color-primary: #2D7AEF;
+	--color-secondary: #FF5E3A;
+	--color-heading: #1A1A2E;
+	--color-paragraph: #4A4A6A;
 	--box-shadow-primary: -1px 3px 10px 0 rgba(0, 0, 0, 0.6);
 	--box-shadow-secondary: 0 10px 30px 0 rgba(44, 130, 237, 0.4);
-	--box-shadow-regular: 0px 2px 12px 0px #e7e7e7;
-	--bg-gray: #EFEFEF;
+	--box-shadow-regular: 0px 2px 12px 0px #E7E7E7;
+	--bg-gray: #F0F5FF;
 	--bg-gradient: linear-gradient(90deg, var(--color-primary)  0%, var(--color-secondary) 100%);
 }
 
@@ -12639,3 +12639,76 @@ ul.opening-hours li:first-child {
 		transform: rotate(0deg);
 	}
 }
+/* GOMAT Cargo Logo Custom Styling */
+.logo {
+    color: var(--white); /* Default color before scroll (desktop) */
+    font-size: 46px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: inline-block;
+    font-weight: bold;
+    transition: color 0.3s, background 0.3s;
+    background: none !important;
+	letter-spacing: -2.5px;
+}
+
+/* Responsive logo font size */
+@media (max-width: 1200px) {
+  .logo {
+    font-size: 36px;
+  }
+}
+@media (max-width: 992px) {
+  .logo {
+    font-size: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .logo {
+    font-size: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .logo {
+    font-size: 26px;
+  }
+}
+
+/* On and below medium screens, set logo color to --dark before scroll */
+@media (max-width: 992px) {
+  .logo.logo-display {
+    color: var(--dark);
+  }
+}
+
+.logo:hover {
+    color: var(--color-secondary);
+    opacity: 1;
+    background: none !important;
+}
+
+/* When scrolled (navbar gets .sticked), use --color-secondary for .logo-display */
+nav.sticked .logo.logo-display {
+    color: var(--color-secondary);
+    background: none !important;
+}
+
+/* .logo-scrolled logic remains for Cargo if needed */
+.logo.logo-scrolled {
+    color: var(--color-secondary);
+    background: none !important;
+}
+nav.sticked .logo.logo-scrolled {
+    color: var(--dark-secondary);
+    background: none !important;
+}
+nav.sticked .logo.logo-scrolled:hover {
+    color: var(--color-secondary);
+    background: none !important;
+}
+
+/* Optionally, add a hover effect for .logo-display as well */
+.logo.logo-display:hover {
+  color: var(--color-secondary);
+  background: none !important;
+}
+
